@@ -1,0 +1,34 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option htmode 'HT20'
+	list ht_capab 'SHORT-GT-20'
+	list ht_capab 'SHORT-GT-40'
+	list ht_capab 'TX-STBC'
+	list ht_capab 'RX-STBC1'
+	list ht_capab 'DSSS_CCK-40'
+
+config wifi-iface
+	option device 'radio0'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'openwrt'
+	option encryption 'psk2'
+	option key 'passw0rd'
+
+config wifi-device 'radio1'
+	option type 'mac80211'
+	option channel '11'
+	option hwmode '11g'
+	option path 'platform/soc/3f300000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1'
+	option htmode 'HT20'
+
+config wifi-iface 'default_radio1'
+	option device 'radio1'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'OpenWrt'
+	option encryption 'psk2'
+	option key 'passw0rd'
+
